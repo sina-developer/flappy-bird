@@ -21,8 +21,8 @@ export const CONSTS = {
       POS_Y: 90,
     },
   },
-  BIRD_WIDTH: 100,
-  BIRD_HEIGHT: 70,
+  BIRD_WIDTH: 50,
+  BIRD_HEIGHT: 35,
 
   GROUND: {
     ORIGINAL_WIDTH: 154,
@@ -33,6 +33,30 @@ export const CONSTS = {
 
     HEIGHT: 150,
     WIDTH: 480,
+    RESISTANCE: 10,
+  },
+
+  PIPES: {
+    UP: {
+      ORIGINAL_HEIGHT: 135,
+      ORIGINAL_WIDTH: 26,
+
+      POS_X: 302,
+      POS_Y: 0,
+
+      WIDTH: 75,
+      HEIGHT: 394,
+    },
+    DOWN: {
+      ORIGINAL_HEIGHT: 121,
+      ORIGINAL_WIDTH: 26,
+
+      POS_X: 330,
+      POS_Y: 0,
+
+      WIDTH: 75,
+      HEIGHT: 352,
+    },
     RESISTANCE: 10,
   },
 };
