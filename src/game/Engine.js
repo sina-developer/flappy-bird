@@ -1,3 +1,4 @@
+import checkColliders from './colliders/checkColliders';
 import Pool from './handler/Pool';
 import Background from './objects/Background';
 import Bird from './objects/Bird';
@@ -13,8 +14,8 @@ class Engine {
     this.objects = [
       new Background(this.context2D, this.sprite),
       new Pool(context2D, sprite, Pipe, 2),
-      new Bird(this.context2D, this.sprite),
       new Ground(this.context2D, this.sprite),
+      new Bird(this.context2D, this.sprite),
     ];
   }
 
@@ -23,6 +24,7 @@ class Engine {
     this.objects.forEach((object) => {
       object.update(deltaTime);
     });
+    checkColliders(this.objects, 'Bird');
     this.lastTimestamp = timestamp;
     this.animationId = requestAnimationFrame(this.animate);
   };

@@ -6,6 +6,16 @@ class ObjectModel {
 
   start() {}
 
+  getColliders() {
+    return [];
+  }
+
+  hit() {}
+
+  destroy(){
+    
+  }
+
   update(deltaTime) {}
 }
 

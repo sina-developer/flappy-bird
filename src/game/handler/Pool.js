@@ -1,9 +1,10 @@
 import { CONSTS } from '../../consts/Consts';
+import ObjectModel from '../objects/ObjectModel';
 
-class Pool {
+class Pool extends ObjectModel {
   constructor(context2D, sprite, ref, count_on_screen) {
-    this.context2D = context2D;
-    this.sprite = sprite;
+    super(context2D, sprite);
+
     this.ref = ref;
     this.count = count_on_screen + 1;
 
@@ -18,6 +19,15 @@ class Pool {
       this.stack[i] = new this.ref(this.context2D, this.sprite);
       this.stack[i].start(this.startOffset + this.gap * i);
     }
+  }
+
+  getColliders() {
+    let colliders = [];
+    for (let i = 0; i < this.count; i++) {
+      const item = this.stack[i];
+      colliders = [...colliders, ...item.getColliders()];
+    }
+    return colliders;
   }
 
   update(deltaTime) {
