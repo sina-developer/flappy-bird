@@ -25,7 +25,11 @@ class Engine {
   };
 
   animate = (timestamp) => {
-    if (this.stopped) return;
+    if (this.stopped) {
+      // Cancel animation frame on game over
+      this.stopAnimation();
+      return;
+    }
     const deltaTime = timestamp - this.lastTimestamp;
     this.objects.forEach((object) => {
       object.update(deltaTime);
