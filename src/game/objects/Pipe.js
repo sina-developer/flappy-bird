@@ -5,8 +5,8 @@ import BoxCollider from '../colliders/boxCollider';
 import ObjectModel from './ObjectModel';
 
 class Pipe extends ObjectModel {
-  constructor(context2D, sprite) {
-    super(context2D, sprite);
+  constructor(engine,context2D, sprite) {
+    super(engine,context2D, sprite);
 
     this.gap = 100;
   }

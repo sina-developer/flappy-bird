@@ -3,8 +3,8 @@ import { drawSprite } from '../../utils/SpriteHandler';
 import ObjectModel from './ObjectModel';
 
 class Background extends ObjectModel {
-  constructor(context2D, sprite) {
-    super(context2D, sprite);
+  constructor(engine,context2D, sprite) {
+    super(engine,context2D, sprite);
   }
   start() {}
 

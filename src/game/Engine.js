@@ -11,15 +11,21 @@ class Engine {
     this.sprite = sprite;
     this.lastTimestamp = 0;
     this.animationId = null;
+    this.stopped = false;
     this.objects = [
-      new Background(this.context2D, this.sprite),
-      new Pool(context2D, sprite, Pipe, 2),
-      new Ground(this.context2D, this.sprite),
-      new Bird(this.context2D, this.sprite),
+      new Background(this, this.context2D, this.sprite),
+      new Pool(this, context2D, sprite, Pipe, 2),
+      new Ground(this, this.context2D, this.sprite),
+      new Bird(this, this.context2D, this.sprite),
     ];
   }
 
+  stopGame = () => {
+    this.stopped = true;
+  };
+
   animate = (timestamp) => {
+    if (this.stopped) return;
     const deltaTime = timestamp - this.lastTimestamp;
     this.objects.forEach((object) => {
       object.update(deltaTime);

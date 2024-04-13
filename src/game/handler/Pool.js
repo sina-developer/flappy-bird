@@ -2,8 +2,8 @@ import { CONSTS } from '../../consts/Consts';
 import ObjectModel from '../objects/ObjectModel';
 
 class Pool extends ObjectModel {
-  constructor(context2D, sprite, ref, count_on_screen) {
-    super(context2D, sprite);
+  constructor(engine, context2D, sprite, ref, count_on_screen) {
+    super(engine, context2D, sprite);
 
     this.ref = ref;
     this.count = count_on_screen + 1;
@@ -16,7 +16,7 @@ class Pool extends ObjectModel {
 
   start() {
     for (let i = 0; i < this.count; i++) {
-      this.stack[i] = new this.ref(this.context2D, this.sprite);
+      this.stack[i] = new this.ref(this.engine, this.context2D, this.sprite);
       this.stack[i].start(this.startOffset + this.gap * i);
     }
   }

@@ -21,7 +21,7 @@ export default function checkColliders(objects, target) {
     target_colliders.forEach((object_collider) => {
       colliders.forEach((collider) => {
         if (collider.intersects(object_collider)) {
-          target_object.hit();
+          target_object.hit(collider.parent.name);
         }
       });
     });

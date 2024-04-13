@@ -4,8 +4,8 @@ import BoxCollider from '../colliders/boxCollider';
 import ObjectModel from './ObjectModel';
 
 class Bird extends ObjectModel {
-  constructor(context2D, sprite) {
-    super(context2D, sprite);
+  constructor(engine, context2D, sprite) {
+    super(engine, context2D, sprite);
     this.frames = [
       [
         CONSTS.BIRD.FRAME_1.POS_X,
@@ -59,8 +59,11 @@ class Bird extends ObjectModel {
     ];
   }
 
-  hit() {
-    console.log('Dead! :P');
+  hit(hit_by) {
+    if (hit_by == CONSTS.GROUND.NAME) {
+      this.engine.stopGame();
+    }
+
     this.is_dead = true;
     this.destroy();
   }

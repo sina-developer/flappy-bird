@@ -1,5 +1,6 @@
 class ObjectModel {
-  constructor(context2D, sprite) {
+  constructor(engine, context2D, sprite) {
+    this.engine = engine;
     this.context2D = context2D;
     this.sprite = sprite;
   }
@@ -12,9 +13,7 @@ class ObjectModel {
 
   hit() {}
 
-  destroy(){
-    
-  }
+  destroy() {}
 
   update(deltaTime) {}
 }

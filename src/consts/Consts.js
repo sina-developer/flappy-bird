@@ -25,6 +25,7 @@ export const CONSTS = {
   BIRD_HEIGHT: 35,
 
   GROUND: {
+    NAME: 'GROUND',
     ORIGINAL_WIDTH: 154,
     ORIGINAL_HEIGHT: 56,
 
